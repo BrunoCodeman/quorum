@@ -7,7 +7,7 @@
 ## 1) Time complexity:
 
 * [The longer the lists, the longer it takes](https://en.wikipedia.org/wiki/Big_O_notation)
-* Tradeoffs: For a matter of simplicity, typed lists where used. Switching to ```Set()``` would be a way to improve performance since _sets_ are implemented as hashtables and have more efficient lookup. Specific algorithms (i.e binary search) can also be used to improve performance of this type of problem.
+* Tradeoffs: For a matter of simplicity, typed lists where used. Switching to ```Set()``` would be a way to improve performance since _sets_ are implemented as hashtables and have more efficient lookup. Specific algorithms (e.g binary search) can also be used to improve performance of this type of problem.
 
 ## 2) Future extension
 * The solution was written in a way to abstract the fields as much as possible. the functions to read and write data, for instance, are not depending on any implementation. I used dataclasses, but using dictionaries maybe would allow even more customization.
