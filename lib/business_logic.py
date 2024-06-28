@@ -55,10 +55,11 @@ def get_legislator_support(legislators:List[Legislator],
         support = LegislatorSupport(legislator=l,num_opposed_bills=0,num_supported_bills=0)
         for vr in vote_results:
             if vr.legislator_id == l.id:
-                if vr.vote_type == VoteType.YES:
+                if VoteType(vr.vote_type) == VoteType.YES:
                     support.num_supported_bills+=1
-                if vr.vote_type == VoteType.NO:
+                if VoteType(vr.vote_type) == VoteType.NO:
                     support.num_opposed_bills+=1
+        print(support.num_opposed_bills)
         supports.append(support)
     return supports
 
@@ -81,10 +82,12 @@ def get_voted_bills(bills:List[Bill], votes:List[Vote], vote_results:List[VoteRe
             if v.bill_id == bill.id:
                 for vr in vote_results:
                     if v.id == vr.vote_id:
-                        if vr.vote_type == VoteType.YES:
+                        print(vr.__dict__)
+                        if vr.vote_type == '1':
                             voted.supporter_count+=1
-                        if vr.vote_type == VoteType.NO:
+                        if vr.vote_type == '2':
                             voted.opposer_count+=1
+        print(voted)
         voted_bills.append(voted)
     return voted_bills
 
@@ -134,6 +137,8 @@ def __write_content__(filepath:str, lst:List, field_names:List[str]):
             data = {}
             for field in field_names:
                 data[field] = getattr(l, field)
+            print(data)
+            print(l)
             writer.writerow(data)
     
 

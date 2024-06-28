@@ -34,8 +34,8 @@ class VoteType(Enum):
     """
     Choices for voting
     """
-    YES = 1
-    NO = 2
+    YES = '1'
+    NO = '2'
 
 @dataclass
 class VoteResult:
