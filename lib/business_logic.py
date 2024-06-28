@@ -129,6 +129,7 @@ def __write_content__(filepath:str, lst:List, field_names:List[str]):
     with open(filepath,'w') as csv_file:
         fieldnames=lst[0].__dict__.keys()
         writer = csv.DictWriter(csv_file, fieldnames=field_names)
+        writer.writeheader()
         for l in lst:
             data = {}
             for field in field_names:
