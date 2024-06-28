@@ -40,11 +40,11 @@ class QuorumTest(unittest.TestCase):
         generate_legislators_report_csv(report_filepath)
         file_exists = os.path.isfile(report_filepath)
         self.assertTrue(file_exists)
-        #os.remove(report_filepath)
+        os.remove(report_filepath)
         
     def test_must_generate_bills_report_csv(self):
         report_filepath='bills.csv'
         generate_bills_report_csv(report_filepath)
         file_exists = os.path.isfile(report_filepath)
         self.assertTrue(file_exists)
-       # os.remove(report_filepath)
+        os.remove(report_filepath)
