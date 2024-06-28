@@ -12,6 +12,12 @@ class LegislatorSupport:
     legislator:Legislator
     num_supported_bills:int
     num_opposed_bills:int
+    @property
+    def id(self) ->int:
+        return self.legislator.id
+    @property
+    def name(self) ->str:
+        return self.legislator.name
 
 @dataclass
 class Bill:
@@ -44,8 +50,13 @@ class VotedBill:
     supporter_count:int
     opposer_count:int
     @property
+    def id(self) ->int:
+        return self.bill.id
+    @property
+    def title(self) ->int:
+        return self.bill.title
+    @property
     def primary_sponsor(self) ->int:
-        ps = self.bill.sponsor_id
-        return ps
+        return self.bill.sponsor_id
 
 
